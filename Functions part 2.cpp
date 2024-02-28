@@ -12,14 +12,14 @@ void getInput(double& currentPrice, double& OneYearAgo, double& TwoYearsAgo) {
 
 // Calculate the inflation rates 
 void calcRates(double currentPrice, double OneYearAgo, double TwoYearsAgo, double& inflationRate1, double& inflationRate2) {
-	inflationRate1 = (currentPrice - OneYearAgo) / OneYearAgo;
-	inflationRate2 = (OneYearAgo - TwoYearsAgo) / TwoYearsAgo;
+	inflationRate1 = ((currentPrice - OneYearAgo) / OneYearAgo) *100;
+	inflationRate2 = ((OneYearAgo - TwoYearsAgo) / TwoYearsAgo) * 100;
 }
 
 // Output the results 
-void outputResult(double inflationRate1, double inflationRate2) {
-	std::cout << "Innflation rate for the first year: " << inflationRate1 << std::endl;
-	std::cout << "Inflation rate for the second year: " << inflationRate2 << std::endl;
+void outputResult(double inflationRate1, double inflationRate2) { 
+	std::cout << "Innflation rate for the first year: " << inflationRate1 << " %" << std::endl;
+	std::cout << "Inflation rate for the second year: " << inflationRate2 << " %" << std::endl;  
 
 	if (inflationRate1 < inflationRate2) {
 		std::cout << "The inflation trend is increasing." << std::endl;
